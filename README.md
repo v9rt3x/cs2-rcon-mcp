@@ -45,11 +45,11 @@ python -m rcon_mcp
 
 ## Docker (recommended)
 
-Build and run with Docker:
+Pull and run the Docker image from GitHub Container Registry:
 
 ```bash
-docker build -t rcon-mcp .
-docker run -p 8080:8080 rcon-mcp
+docker pull ghcr.io/v9rt3x/cs2-rcon-mcp:main
+docker run -p 8080:8080 ghcr.io/v9rt3x/cs2-rcon-mcp:main
 ```
 
 ### Docker Environment Variables
@@ -61,7 +61,7 @@ docker run -p 8080:8080 \
   -e HOST=your_server_ip \
   -e SERVER_PORT=your_server_port \
   -e RCON_PASSWORD=your_password \
-  rcon-mcp
+  ghcr.io/v9rt3x/cs2-rcon-mcp:main
 ```
 
 ### Connecting from Cursor (or any other MCP-Client)
