@@ -6,6 +6,8 @@ A Model Context Protocol server for CS2 RCON management.
 
 This project provides a Model Context Protocol (MCP) server interface for managing CS2 game servers via RCON. It allows remote control and monitoring of CS2 servers through a standardized protocol.
 
+![CS2 RCON MCP Demo](cs2-rcon-mcp.gif)
+
 ## Features
 
 - Manage your CS2 server in natural language
@@ -80,7 +82,7 @@ docker run -p 8080:8080 \
 3. In Cursor, open the MCP panel (usually in the sidebar)
 4. The server should automatically connect using the configured URL
 
-Once connected, you can manage your server in natural language:
+Once connected, you can manage your server in natural language.
 
 Example prompts:
 
@@ -88,3 +90,10 @@ Example prompts:
 2. "What's the current server status? How many players are connected and what map are we on?"
 
 Happy fragging! 😊
+
+
+What's the current server status?
+
+Please change the map to de_dust2 and add two bots!
+
+What's the server status now?
