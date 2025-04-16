@@ -1,0 +1,39 @@
+# 🔐 Sensitive files
+.env
+.env.*
+
+# 🐍 Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# 📦 Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# 💾 Package files
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 📁 OS / IDE / Editor files
+.DS_Store
+*.log
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# 🔧 Test files & coverage
+.coverage
+.tox/
+.pytest_cache/
+htmlcov/
+
+# 🔄 Git and version control
+.git/
+.gitignore
