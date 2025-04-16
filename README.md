@@ -90,10 +90,3 @@ Example prompts:
 2. "What's the current server status? How many players are connected and what map are we on?"
 
 Happy fragging! 😊
-
-
-What's the current server status?
-
-Please change the map to de_dust2 and add two bots!
-
-What's the server status now?
