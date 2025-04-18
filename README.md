@@ -51,28 +51,61 @@ python -m rcon_mcp
 
 ## Docker (recommended)
 
-Pull and run the Docker image from GitHub Container Registry:
+Pull the Docker image from GitHub Container Registry:
 
 ```bash
 docker pull ghcr.io/v9rt3x/cs2-rcon-mcp:main
-docker run -p 8080:8080 ghcr.io/v9rt3x/cs2-rcon-mcp:main
 ```
 
 ### Docker Environment Variables
 
-When running with Docker, you can set the environment variables:
+When running with Docker, you can set the environment variables in two ways:
 
-```bash
-docker run -p 8080:8080 \
-  -e HOST=your_server_ip \
-  -e SERVER_PORT=your_server_port \
-  -e RCON_PASSWORD=your_password \
-  ghcr.io/v9rt3x/cs2-rcon-mcp:main
-```
+1. **Directly in the command**:
+   ```bash
+   docker run -p 8080:8080 \
+     -e HOST=your_server_ip \
+     -e SERVER_PORT=your_server_port \
+     -e RCON_PASSWORD=your_password \
+     ghcr.io/v9rt3x/cs2-rcon-mcp:main
+   ```
 
-### Connecting from Cursor (or any other MCP-Client)
+2. **Using a `.server-env` file**:
+   Create a file named `.server-env` with the following content:
+   ```
+   HOST=your_server_ip
+   SERVER_PORT=your_server_port
+   RCON_PASSWORD=your_password
+   ```
 
-1. Start the MCP server (either directly or via Docker)
+   Then run the container like this:
+   ```bash
+   docker run -p 8080:8080 --env-file .server-env ghcr.io/v9rt3x/cs2-rcon-mcp:main
+   ```
+
+This provides users with an alternative method to set environment variables, making it easier to manage sensitive information like passwords.
+
+### Connecting from Visual Studio Code (GitHub Copilot)
+
+To configure Visual Studio Code to work with the MCP server, follow these steps:
+
+1. **Start the MCP Server**: Ensure that your MCP server is running before attempting to connect from VS Code.
+
+2. **Open Visual Studio Code**: Launch VS Code and ensure that you have the GitHub Copilot extension installed and configured.
+
+3. **Configure GitHub Copilot**:
+   - Change the mode from "Ask" to "Agent" mode.
+
+4. **Add MCP Server Configuration**:
+   - Click on the toolbox icon in the upper left corner of the Copilot prompt.
+   - Select "Add MCP Server" and choose the option for **HTTP - server-sent events**.
+
+5. **Enter the Server URL**:
+   - For the URL, input: `http://localhost:8080/cs2server/sse`. This is the endpoint for the MCP server's SSE connection.
+
+### Alternative: Connecting from Cursor (or any other MCP-Client)
+
+1. Start the MCP server
 2. Configure Cursor's MCP settings by creating or updating `~/.cursor/mcp.json`:
    ```json
    {
