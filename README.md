@@ -16,6 +16,7 @@ This project provides a Model Context Protocol (MCP) server interface for managi
 
 - Manage your CS2 server in natural language
 - RCON command execution
+- Manage workshop maps (host, list, change) - [Explore Workshop Maps](https://steamcommunity.com/app/730/workshop/)
 - Server status monitoring
 - SSE-based communication
 - Docker support
@@ -33,7 +34,7 @@ This project provides a Model Context Protocol (MCP) server interface for managi
 Pull the Docker image from GitHub Container Registry:
 
 ```bash
-docker pull ghcr.io/v9rt3x/cs2-rcon-mcp:main
+docker pull ghcr.io/v9rt3x/cs2-rcon-mcp:latest
 ```
 
 ### Docker Environment Variables
@@ -46,7 +47,7 @@ When running with Docker, you can set the environment variables in two ways:
      -e HOST=your_server_ip \
      -e SERVER_PORT=your_server_port \
      -e RCON_PASSWORD=your_password \
-     ghcr.io/v9rt3x/cs2-rcon-mcp:main
+     ghcr.io/v9rt3x/cs2-rcon-mcp:latest
    ```
 
 2. **Using a `.server-env` file**:
@@ -59,7 +60,7 @@ When running with Docker, you can set the environment variables in two ways:
 
    Then run the container like this:
    ```bash
-   docker run -p 8080:8080 --env-file .server-env ghcr.io/v9rt3x/cs2-rcon-mcp:main
+   docker run -p 8080:8080 --env-file .server-env ghcr.io/v9rt3x/cs2-rcon-mcp:latest
    ```
 
 This provides users with an alternative method to set environment variables, making it easier to manage sensitive information like passwords.
