@@ -22,34 +22,13 @@ This project provides a Model Context Protocol (MCP) server interface for managi
 
 ## Installation
 
-```bash
-pip install -e .
-```
-
-## Usage
-
-### Running the Server
-
-```bash
-python -m rcon_mcp
-```
-
-### Available Commands
-
-- `rcon <command>`: Execute any RCON command
-- `status`: Get current server status
-- `changelevel <map_name>`: Change the current map
-- `mp_warmup_end`: End the warmup phase
-- `mp_restartgame 1`: Restart the game
-- And many more CS2 server commands
-
-## Environment Variables
+### Environment Variables
 
 - `HOST`: CS2 server IP
 - `SERVER_PORT`: CS2 server port
 - `RCON_PASSWORD`: RCON password
 
-## Docker (recommended)
+### Docker (recommended)
 
 Pull the Docker image from GitHub Container Registry:
 

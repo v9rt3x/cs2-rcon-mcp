@@ -51,6 +51,32 @@ class RCONCommands:
             ConnectionError: If unable to connect to the RCON server.
         """
         return self.execute("status")
+    
+    def list_workshop_maps(self) -> str:
+        """List all workshop maps on the CS2 server.
+        
+        Returns:
+            str: A list of workshop maps.
+        """
+        return self.execute("ds_workshop_listmaps")
+    
+    def host_workshop_map(self, workshop_map_id: int) -> str:
+        """Hosts a workshop map by its id on the CS2 server.
+        
+        Returns:
+            str: The server's response to the host_workshop_map command.
+        """
+        command = f"host_workshop_map {workshop_map_id}"
+        return self.execute(command)
+    
+    def workshop_changelevel(self, workshop_map_name: str) -> str:
+        """Changes the map to a given CS2 workshop map on the CS2 server.
+        
+        Returns:
+            str: The server's response to the ds_worskshop_changelevel command.
+        """
+        command = f"ds_workshop_changelevel {workshop_map_name}"
+        return self.execute(command)
 
     @staticmethod
     def get_available_commands() -> Dict[str, str]:
@@ -149,5 +175,49 @@ def status() -> str:
     """
     return rcon_commands.status()
 
+@mcp.tool()
+def list_workshop_maps() -> str:
+    """List all workshop maps on the CS2 server.
+        
+    Returns:
+        str: A list of workshop maps.
+        
+    Raises:
+        ConnectionError: If unable to connect to the server.
+    """
+    return rcon_commands.list_workshop_maps()
+
+@mcp.tool()
+def host_workshop_map(workshop_map_id: int) -> str:
+    """Hosts a workshop map by its id on the CS2 server.
+    
+    Args:
+        command: The id of the workshop map that should be hosted.
+        
+    Returns:
+        str: The server's response to the command.
+        
+    Raises:
+        ConnectionError: If unable to connect to the server.
+        ValueError: If the command execution fails.
+    """
+    return rcon_commands.host_workshop_map(workshop_map_id)
+
+@mcp.tool()
+def workshop_changelevel(workshop_map_name: str) -> str:
+    """Changes the map to a given CS2 workshop map on the CS2 server.
+    
+    Args:
+        command: The workshop map name the map should change to.
+        
+    Returns:
+        str: The server's response to the command.
+        
+    Raises:
+        ConnectionError: If unable to connect to the server.
+        ValueError: If the command execution fails.
+    """
+    return rcon_commands.workshop_changelevel(workshop_map_name)
+
 # Export the MCP instance
-mcp_server = mcp._mcp_server 
+mcp_server = mcp._mcp_server
