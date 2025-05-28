@@ -17,9 +17,18 @@ This project provides a Model Context Protocol (MCP) server interface for managi
 - Manage your CS2 server in natural language
 - RCON command execution
 - Manage workshop maps (host, list, change) - [Explore Workshop Maps](https://steamcommunity.com/app/730/workshop/)
-- Server status monitoring
 - SSE-based communication
 - Docker support
+
+## Available Tools
+
+| Tool | Short Description |
+|------|-------------------|
+| `rcon` | Execute any RCON command |
+| `status` | Get current server status |
+| `list_workshop_maps` | List all workshop maps on the server |
+| `host_workshop_map` | Host a workshop map by its ID |
+| `workshop_changelevel` | Change the map to a given workshop map |
 
 ## Installation
 
