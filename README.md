@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/v9rt3x-cs2-rcon-mcp-badge.png)](https://mseep.ai/app/v9rt3x-cs2-rcon-mcp)
+
 # CS2 RCON MCP
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
